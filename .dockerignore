@@ -1,0 +1,8 @@
+.deps
+__pycache__
+*.pyc
+.tmp
+data/*.db
+data/*.docx
+bin/*.exe
+bin/*.zip
