@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>圆桌 RoundTable · 让每个人都说上话</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="home">
+  <div class="home-card">
+    <div class="brand-big">
+      <div class="logo">圆</div>
+      <div>
+        <h1>圆桌</h1>
+        <small>ROUND TABLE</small>
+      </div>
+    </div>
+    <p class="slogan">AI 主持的小组讨论：它会点名、会让麦、会在跑题时把话题拉回来，最后给出一份写清了共识与分歧的纪要。</p>
+
+    <div class="tabs">
+      <button data-mode="create" class="on">创建讨论</button>
+      <button data-mode="join">加入讨论</button>
+    </div>
+
+    <div class="field">
+      <label>你的昵称</label>
+      <input id="name" maxlength="12" placeholder="例如：小林">
+    </div>
+
+    <div class="field" id="topicField">
+      <label>讨论议题</label>
+      <input id="topic" maxlength="60" placeholder="例如：学校该不该禁止电动车进校园？">
+    </div>
+
+    <div class="field" id="codeField" style="display:none">
+      <label>房间号</label>
+      <input id="code" maxlength="6" inputmode="numeric" placeholder="4 位数字">
+    </div>
+
+    <button class="primary" id="go">开始</button>
+    <div class="err" id="err"></div>
+    <p class="hint">无需注册。创建后把房间号发给同学，连同一个 Wi-Fi 打开这个地址就能进来。</p>
+  </div>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
