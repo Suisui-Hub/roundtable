@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: roundtable
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    envVars:
+      # 想接真模型就把 RT_API_KEY 填进来；不填则走内置的规则版，功能完整、不需要 Key
+      - key: RT_MODEL
+        value: deepseek-chat
+      - key: RT_API_BASE
+        value: https://api.deepseek.com/v1
