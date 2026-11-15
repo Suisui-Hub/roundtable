@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>圆桌 · 讨论中</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">圆桌 <span>ROUND TABLE</span></div>
+  <div class="topic" id="topic">正在加载议题…</div>
+  <div class="top-right">
+    <span class="status" id="status">讨论进行中</span>
+    <button class="ghost" id="btnMinutes">生成纪要</button>
+  </div>
+</header>
+
+<main class="grid">
+  <aside class="col-left">
+    <section class="card">
+      <h3>参与成员 <span class="count" id="memberCount">0 人</span></h3>
+      <div id="members"><div class="empty">还没有人</div></div>
+    </section>
+
+    <section class="card">
+      <h3>发言均衡度 <em>实时</em></h3>
+      <div class="donut-wrap">
+        <svg id="donut" viewBox="0 0 140 140" width="150" height="150"></svg>
+        <div class="donut-center">
+          <b id="totalTime">0s</b>
+          <span>总发言</span>
+        </div>
+      </div>
+      <div id="legend"></div>
+      <div class="std-box">
+        <div class="row"><span>发言标准差</span><b id="std">0%</b></div>
+        <div class="std-bar"><i id="stdBar"></i></div>
+        <div class="std-note">标准差越小，大家说得越均匀</div>
+      </div>
+    </section>
+  </aside>
+
+  <section class="col-mid card">
+    <div class="col-head">
+      讨论流
+      <span class="sub">AI 主持人不给答案，只负责让讨论往前走</span>
+    </div>
+    <div class="messages" id="messages"></div>
+    <div class="composer">
+      <textarea id="input" maxlength="500" placeholder="说点什么……（Enter 发送，Shift+Enter 换行）"></textarea>
+      <button class="send" id="send">发送</button>
+    </div>
+  </section>
+
+  <aside class="col-right card">
+    <div class="col-head">观点卡片 <span class="count" id="cardCount">0 张</span></div>
+    <div class="cards" id="cards"><div class="empty">发言后自动抽取观点</div></div>
+  </aside>
+</main>
+
+<div class="veil" id="veil">
+  <div class="modal" id="modal"></div>
+</div>
+
+<div class="veil show" id="gate">
+  <div class="modal" style="width:380px">
+    <h2>加入这场讨论</h2>
+    <p class="sub">房间号 <b id="gateCode"></b></p>
+    <div class="field">
+      <label>你的昵称</label>
+      <input id="gateName" maxlength="12" placeholder="例如：小林">
+    </div>
+    <button class="primary" id="gateGo">进入圆桌</button>
+    <div class="err" id="gateErr"></div>
+  </div>
+</div>
+
+<script src="/static/room.js"></script>
+</body>
+</html>
